@@ -1,0 +1,58 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.intro__situation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.intro__situation i {
+  padding-right: 10px;
+}
+
+.intro__texte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.fonctionnement h3 {
+  display: flex;
+  justify-content: left;
+  font-weight: 700;
+}
+
+.fonctionnement__carte {
+  display: flex;
+  align-items: center;
+}
+
+.restaurant h4 {
+  display: flex;
+  justify-content: left;
+  font-weight: 700;
+}
+
+.restaurant__carte {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.restaurant__carte__img img {
+  object-fit: cover;
+  width: 80%;
+  height: 150px;
+}
+
+/*# sourceMappingURL=style.css.map */
