@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass" : "sass --watch ./CSS/main.scss:./FrancoisMoriame_3_01032021/style.css"
+    "sass" : "sass --watch ./Accueil/accueil.scss:./style.css"
   },
   "author": "",
   "license": "ISC",
