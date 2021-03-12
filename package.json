@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sass" : "sass --watch ./Accueil/accueil.scss:./style.css"
-  },
+  }, 
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
