@@ -1,4 +1,86 @@
 @charset "UTF-8";
+.intro,
+h4.fonctionnement__titre,
+.fonctionnement,
+.restaurant {
+  animation: apparition 4s;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loading__spinner {
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  bottom: 70%;
+  right: 55%;
+  height: 100%;
+  animation: fade-out 4s;
+}
+.loading__spinner div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: linear-gradient(#ff79da, #9356dc);
+  animation: loading__spinner 1.2s cubic-bezier(0, 0.5, 0.5, 1) 3.3;
+}
+.loading__spinner div:nth-child(1) {
+  left: -24px;
+  animation-delay: -0.24s;
+}
+.loading__spinner div:nth-child(2) {
+  left: 0px;
+  animation-delay: -0.12s;
+}
+.loading__spinner div:nth-child(3) {
+  left: 24px;
+  animation-delay: 0;
+}
+.loading__spinner div:nth-child(4) {
+  left: 48px;
+  animation-delay: -0.24s;
+}
+.loading__spinner div:nth-child(5) {
+  left: 72px;
+  animation-delay: -0.12s;
+}
+.loading__spinner div:nth-child(6) {
+  left: 96px;
+  animation-delay: 0s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes loading__spinner {
+  0% {
+    top: 8px;
+    height: 150px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 75px;
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -132,6 +214,7 @@ h2 {
   background-color: #f2f2f2;
   padding-left: 8px;
   padding-right: 8px;
+  padding-bottom: 1px;
 }
 .restaurant__titre {
   padding-left: 15px;
@@ -257,6 +340,9 @@ footer ul {
 footer i {
   margin-right: 10px;
 }
+footer a {
+  color: white;
+}
 
 .fa-hands-helping {
   font-size: 11.5px;
@@ -344,28 +430,53 @@ footer i {
 }
 
 .entrées {
-  animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  -webkit-animation: fadein 1s;
+  animation: fadein1 6s;
+  -moz-animation: fadein1 6s;
+  -webkit-animation: fadein1 6s;
 }
 
 .plats {
-  animation: fadein 3s;
-  -moz-animation: fadein 3s;
-  -webkit-animation: fadein 3s;
+  animation: fadein2 4s;
+  -moz-animation: fadein2 4s;
+  -webkit-animation: fadein2 4s;
 }
 
 .desserts {
-  animation: fadein 5s;
-  -moz-animation: fadein 5s;
-  -webkit-animation: fadein 5s;
+  animation: fadein3 4s;
+  -moz-animation: fadein3 4s;
+  -webkit-animation: fadein3 4s;
 }
 
-@keyframes fadein {
-  from {
+@keyframes fadein1 {
+  0% {
     opacity: 0;
   }
-  to {
+  33% {
+    opacity: 1;
+  }
+}
+@keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+}
+@keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -484,10 +595,16 @@ h3::after {
   -moz-box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .carte h4 {
   padding-top: 0px;
   padding-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .carte__prix {
   display: flex;
@@ -496,8 +613,56 @@ h3::after {
   padding: 10px;
   padding-right: 20px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carte__texte {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carte__anim {
+  color: white;
+  background-color: #99e2d0;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  display: none;
+}
+.carte:hover .carte {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carte:hover .carte__anim {
+  animation-name: selec;
+  animation-duration: 1s;
+  display: flex;
+}
+.carte:hover .carte__anim .fas {
+  animation-name: turn;
+  animation-duration: 1s;
 }
 
+@keyframes selec {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 25%;
+  }
+}
+@keyframes turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
 h4 {
   margin: 0px;
 }

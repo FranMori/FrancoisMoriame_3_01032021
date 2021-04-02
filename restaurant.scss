@@ -4,28 +4,53 @@
 }
 
 .entrées {
-  animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  -webkit-animation: fadein 1s;
+  animation: fadein1 6s;
+  -moz-animation: fadein1 6s;
+  -webkit-animation: fadein1 6s;
 }
 
 .plats {
-  animation: fadein 3s;
-  -moz-animation: fadein 3s;
-  -webkit-animation: fadein 3s;
+  animation: fadein2 4s;
+  -moz-animation: fadein2 4s;
+  -webkit-animation: fadein2 4s;
 }
 
 .desserts {
-  animation: fadein 5s;
-  -moz-animation: fadein 5s;
-  -webkit-animation: fadein 5s;
+  animation: fadein3 4s;
+  -moz-animation: fadein3 4s;
+  -webkit-animation: fadein3 4s;
 }
 
-@keyframes fadein {
-  from {
+@keyframes fadein1 {
+  0% {
     opacity: 0;
   }
-  to {
+  33% {
+    opacity: 1;
+  }
+}
+@keyframes fadein2 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+}
+@keyframes fadein3 {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -142,9 +167,15 @@ h3 {
   -moz-box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   & h4 {
     padding-top: 0px;
     padding-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__prix {
     display: flex;
@@ -153,8 +184,64 @@ h3 {
     padding: 10px;
     padding-right: 20px;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__texte {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__anim {
+    color: white;
+    background-color: $color-tertaire;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    display: none;
+  }
+  &:hover {
+    .carte {
+      width: 70%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .carte__anim {
+      animation-name: selec;
+      animation-duration: 1s;
+      display: flex;
+
+      .fas {
+        animation-name: turn;
+        animation-duration: 1s;
+      }
+    }
   }
 }
+
+@keyframes selec {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 25%;
+  }
+}
+@keyframes turn {
+  from {
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 h4 {
   margin: 0px;
 }
