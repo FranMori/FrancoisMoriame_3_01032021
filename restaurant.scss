@@ -3,22 +3,25 @@
   font-family: "Roboto", sans-serif;
 }
 
-.entrées {
-  animation: fadein1 6s;
-  -moz-animation: fadein1 6s;
-  -webkit-animation: fadein1 6s;
+.entrées,
+.entrées__titre {
+  animation: fadein1 2s;
+  -moz-animation: fadein1 2s;
+  -webkit-animation: fadein1 2s;
 }
 
-.plats {
-  animation: fadein2 4s;
-  -moz-animation: fadein2 4s;
-  -webkit-animation: fadein2 4s;
+.plats,
+.plats__titre {
+  animation: fadein2 2s;
+  -moz-animation: fadein2 2s;
+  -webkit-animation: fadein2 2s;
 }
 
-.desserts {
-  animation: fadein3 4s;
-  -moz-animation: fadein3 4s;
-  -webkit-animation: fadein3 4s;
+.desserts,
+.desserts__titre {
+  animation: fadein3 2s;
+  -moz-animation: fadein3 2s;
+  -webkit-animation: fadein3 2s;
 }
 
 @keyframes fadein1 {
@@ -138,7 +141,21 @@ a {
   }
   &__like {
     font-size: 22px;
-    padding-right: 30px;
+    color: white;
+    margin-right: 15px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-text-stroke: 2px grey;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text !important;
+    transition-duration: 1500ms;
+    transition-property: color;
+
+    &:hover {
+      background: linear-gradient(to top, $color-secondaire, $color-primaire);
+      animation: remplissage 1600ms;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
@@ -157,7 +174,6 @@ h3 {
 .carte {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   background-color: white;
   margin-bottom: 15px;
   width: 90%;
@@ -167,15 +183,14 @@ h3 {
   -moz-box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 7px 56px -1px rgba(0, 0, 0, 0.1);
   height: 120%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  & h4 {
+
+  &__titre {
     padding-top: 0px;
     padding-bottom: 0px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 700;
   }
   &__prix {
     display: flex;
@@ -184,9 +199,7 @@ h3 {
     padding: 10px;
     padding-right: 20px;
     font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 0%;
   }
   &__texte {
     white-space: nowrap;
@@ -207,10 +220,16 @@ h3 {
   }
   &:hover {
     .carte {
-      width: 70%;
+      width: 75%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    .carte__prix {
+      display: flex;
+      justify-content: flex-end;
+      width: 0%;
+      margin-left: auto;
     }
 
     .carte__anim {
@@ -242,10 +261,6 @@ h3 {
   }
 }
 
-h4 {
-  margin: 0px;
-}
-
 p {
   margin: 0px;
 }
@@ -269,6 +284,9 @@ p {
 
 .col {
   margin: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .commander {
