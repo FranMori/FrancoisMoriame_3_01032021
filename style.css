@@ -45,7 +45,7 @@ h4.fonctionnement__titre,
 }
 .loading__spinner div:nth-child(3) {
   left: 24px;
-  animation-delay: 0;
+  animation-delay: 0s;
 }
 .loading__spinner div:nth-child(4) {
   left: 48px;
@@ -76,7 +76,8 @@ h4.fonctionnement__titre,
     top: 8px;
     height: 150px;
   }
-  50%, 100% {
+  50%,
+  100% {
     top: 24px;
     height: 75px;
   }
@@ -188,7 +189,7 @@ h2 {
 .fonctionnement__carte:hover {
   background-color: #f5edff;
 }
-.fonctionnement__carte:hover__logo {
+.fonctionnement__carte:hover {
   color: #9356dc;
 }
 .fonctionnement__carte__chiffre {
