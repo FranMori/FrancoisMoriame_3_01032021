@@ -76,8 +76,7 @@ h4.fonctionnement__titre,
     top: 8px;
     height: 150px;
   }
-  50%,
-  100% {
+  50%, 100% {
     top: 24px;
     height: 75px;
   }
@@ -189,7 +188,7 @@ h2 {
 .fonctionnement__carte:hover {
   background-color: #f5edff;
 }
-.fonctionnement__carte:hover {
+.fonctionnement__carte:hover__logo {
   color: #9356dc;
 }
 .fonctionnement__carte__chiffre {
@@ -454,34 +453,43 @@ footer a {
 
 @keyframes fadein1 {
   0% {
+    margin-top: 40px;
     opacity: 0;
   }
   33% {
+    margin-top: 0px;
     opacity: 1;
   }
 }
 @keyframes fadein2 {
   0% {
+    margin-top: 40px;
     opacity: 0;
   }
   33% {
+    margin-top: 40px;
     opacity: 0;
   }
   66% {
+    margin-top: 0px;
     opacity: 1;
   }
 }
 @keyframes fadein3 {
   0% {
+    margin-top: 40px;
     opacity: 0;
   }
   33% {
+    margin-top: 40px;
     opacity: 0;
   }
   66% {
+    margin-top: 40px;
     opacity: 0;
   }
   100% {
+    margin-top: 0px;
     opacity: 1;
   }
 }
