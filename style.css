@@ -432,23 +432,23 @@ footer a {
 
 .entrées,
 .entrées__titre {
-  animation: fadein1 2s;
-  -moz-animation: fadein1 2s;
-  -webkit-animation: fadein1 2s;
+  animation: fadein1 3s;
+  -moz-animation: fadein1 3s;
+  -webkit-animation: fadein1 3s;
 }
 
 .plats,
 .plats__titre {
-  animation: fadein2 2s;
-  -moz-animation: fadein2 2s;
-  -webkit-animation: fadein2 2s;
+  animation: fadein2 3s;
+  -moz-animation: fadein2 3s;
+  -webkit-animation: fadein2 3s;
 }
 
 .desserts,
 .desserts__titre {
-  animation: fadein3 2s;
-  -moz-animation: fadein3 2s;
-  -webkit-animation: fadein3 2s;
+  animation: fadein3 3s;
+  -moz-animation: fadein3 3s;
+  -webkit-animation: fadein3 3s;
 }
 
 @keyframes fadein1 {
